@@ -1,0 +1,45 @@
+@{
+    var grid = Html.DevExpress().GridView(settings =>
+    {
+        settings.Name = "Grid";
+        settings.CallbackRouteValues = new { Controller = "Home", Action = "GridViewPartialView" };
+        settings.SettingsEditing.BatchUpdateRouteValues = new { Controller = "Home", Action = "BatchUpdateRoomsPartial" };
+        settings.SettingsEditing.Mode = GridViewEditingMode.Batch;
+        settings.SettingsPager.PageSize = 5;
+        settings.SettingsBehavior.AllowSort = false;
+        settings.ClientSideEvents.BatchEditStartEditing = "OnBatchEditStartEditing";
+        settings.ClientSideEvents.BatchEditRowDeleting = "OnBatchEditRowDeleting";
+        settings.ClientSideEvents.BatchEditRowInserting = "OnBatchEditRowInserting";
+        settings.CommandColumn.Visible = true;
+        settings.CommandColumn.ShowDeleteButton = true;
+        settings.CommandColumn.ShowNewButtonInHeader = true;
+        settings.Width = 400;
+        settings.KeyFieldName = "ID";
+        settings.Columns.Add("Number");
+        settings.Columns.Add("Floor");
+        settings.Columns.Add(column =>
+        {
+            column.FieldName = "IsReserved";
+            column.ColumnType = MVCxGridViewColumnType.CheckBox;
+            column.EditorProperties().CheckBox(p =>
+            {
+                p.ClientSideEvents.CheckedChanged = "OnCellCheckedChanged";
+                p.ValidationSettings.Display = Display.Dynamic;
+            });
+            column.SetHeaderTemplateContent(c =>
+            {
+                ViewContext.Writer.Write("<div style='text-align:center;'>");
+                Html.DevExpress().CheckBox(headerCheckBoxSettings =>
+                {
+                    headerCheckBoxSettings.Name = "HeaderCheckBox";
+                    headerCheckBoxSettings.Properties.AllowGrayed = true;
+                    headerCheckBoxSettings.Properties.AllowGrayedByClick = false;
+                    headerCheckBoxSettings.Properties.ClientSideEvents.CheckedChanged = "OnHeaderCheckBoxCheckedChanged";
+                    headerCheckBoxSettings.Properties.ClientSideEvents.Init = "OnInitHeader";
+                }).GetHtml();
+                ViewContext.Writer.Write("</div>");
+            });
+        });
+    });
+}
+@grid.Bind(Model).GetHtml()
