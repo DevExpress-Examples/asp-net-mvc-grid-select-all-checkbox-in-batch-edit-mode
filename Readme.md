@@ -1,3 +1,11 @@
+<!-- default file list -->
+*Files to look at*:
+
+* [HomeController.cs](./CS/T401286/Controllers/HomeController.cs) (VB: [HomeController.vb](./VB/T401286/Controllers/HomeController.vb))
+* [Model.cs](./CS/T401286/Models/Model.cs) (VB: [Model.vb](./VB/T401286/Models/Model.vb))
+* **[GridViewPartialView.cshtml](./CS/T401286/Views/Home/GridViewPartialView.cshtml)**
+* [Index.cshtml](./CS/T401286/Views/Home/Index.cshtml)
+<!-- default file list end -->
 # GridView - How to implement the Select All feature for a CheckBox column in Batch Edit mode
 
 
