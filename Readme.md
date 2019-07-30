@@ -8,7 +8,7 @@
 <!-- default file list end -->
 # GridView - How to implement the Select All feature for a CheckBox column in Batch Edit mode
 <!-- run online -->
-**[[Run Online]](https://codecentral.devexpress.com/t401286)**
+**[[Run Online]](https://codecentral.devexpress.com/t401286/)**
 <!-- run online end -->
 
 
