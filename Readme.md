@@ -5,7 +5,7 @@
 <!-- default badges end -->
 # Grid View for ASP.NET MVC - Implement the Select All check box for a templated column in batch edit mode
 <!-- run online -->
-**[[Run Online]](https://codecentral.devexpress.com/t401286/)**
+**[[Run Online]](https://codecentral.devexpress.com/128550423/)**
 <!-- run online end -->
 
 This example demonstrates how to create a header template, add a check box to the template, and implement the Select All functionality in batch edit mode.
