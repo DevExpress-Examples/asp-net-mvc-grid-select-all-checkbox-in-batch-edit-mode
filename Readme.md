@@ -16,7 +16,7 @@ This example demonstrates how to create a header template, add a check box to th
 
 Follow the steps below to implement the **Select All** functionality in a column's header in batch edit mode:
 
-1. Call a column's [SetHeaderTemplateContent](https://docs.devexpress.com/AspNetMvc/DevExpress.Web.Mvc.GridViewSettings.SetHeaderTemplateContent(System.Action-DevExpress.Web.GridViewHeaderTemplateContainer-)) method and add a check box editor to the template.
+1. Call a column's [SetHeaderTemplateContent](https://docs.devexpress.com/AspNetMvc/DevExpress.Web.Mvc.MVCxGridViewColumn.SetHeaderTemplateContent.overloads) method and add a check box editor to the template.
 
     ```csharp
     settings.Columns.Add(column => {
